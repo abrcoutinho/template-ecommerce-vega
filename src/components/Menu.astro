@@ -1,6 +1,267 @@
 ---
+import Banner from '../components/Banner.astro';
+
+const { menuBanner } = Astro.props;
 ---
 
-<nav class="store-menu">
-	<a>Link</a>
-</nav>
+<div class="store-menu">
+	<nav>
+		<ul>
+			<li class="home"><a href={Astro.site} title="Início"></a></li>
+			<li data-id="temas"><u>Temas</u><data>9</data></li>
+			<li data-id="vestuario"><a href="" title=""><u>Vestuário</u></a><data>4</data></li>
+			<li data-id="chapeus"><a href="" title=""><u>Chapéus</u></a><data>2</data></li>
+			<li data-id="acessorios"><a href="" title=""><u>Acessórios</u></a><data>4</data></li>
+			<li data-id="posteres"><a href="" title=""><u>Pôsteres</u></a><data>3</data></li>
+			<li data-id="decoracao"><a href="" title=""><u>Decoração</u></a><data>4</data></li>
+		</ul>
+
+		<ul class="submenu" data-parent="temas">
+			<li class="title">Temas</li>
+			<li><a href="" title=""><u>Ciência</u></a></li>
+			<li><a href="" title=""><u>Vintage</u></a></li>
+			<li><a href="" title=""><u>Natureza</u></a></li>
+			<li><a href="" title=""><u>Espacial</u></a></li>
+			<li><a href="" title=""><u>Divertidas</u></a></li>
+			<li><a href="" title=""><u>Animais</u></a></li>
+			<li><a href="" title=""><u>Gatos</u></a></li>
+			<li><a href="" title=""><u>Música</u></a></li>
+			<li><a href="" title=""><u>Videogames</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="vestuario">
+			<li class="title">Vestuário</li>
+			<li data-id="vestuario-masculino"><a href="" title=""><u>Masculino</u></a><data>12</data></li>
+			<li data-id="vestuario-feminino"><a href="" title=""><u>Feminino</u></a><data>12</data></li>
+			<li data-id="vestuario-unissex"><a href="" title=""><u>Unissex</u></a><data>11</data></li>
+			<li data-id="vestuario-infantil-bebes"><a href="" title=""><u>Infantil & Bebês</u></a><data>6</data></li>
+		</ul>
+
+		<ul class="submenu" data-parent="chapeus">
+			<li class="title">Chapéus</li>
+			<li data-id="chapeus-silkados"><a href="" title=""><u>Silkados</u></a><data>2</data></li>
+			<li data-id="chapeus-bordados"><a href="" title=""><u>Bordados</u></a><data>3</data></li>
+		</ul>
+
+		<ul class="submenu" data-parent="acessorios">
+			<li class="title">Acessórios</li>
+			<li data-id="acessorios-bags"><a href="" title=""><u>Bags</u></a><data>7</data></li>
+			<li data-id="acessorios-bebidas"><a href="" title=""><u>Bebidas</u></a><data>4</data></li>
+			<li data-id="acessorios-lifestyle"><a href="" title=""><u>Lifestyle</u></a><data>9</data></li>
+			<li data-id="acessorios-escritorio"><a href="" title=""><u>Escritório</u></a><data>6</data></li>
+		</ul>
+
+		<ul class="submenu" data-parent="posteres">
+			<li class="title">Pôsteres</li>
+			<li data-id="posteres-impressos"><a href="" title=""><u>Impressos</u></a><data>8</data></li>
+			<li data-id="posteres-skateboards"><a href="" title=""><u>Skateboards</u></a><data>5</data></li>
+			<li data-id="posteres-temas"><a href="" title=""><u>Temas</u></a><data>5</data></li>
+		</ul>
+
+		<ul class="submenu" data-parent="decoracao">
+			<li class="title">Decoração</li>
+			<li data-id="decoracao-quarto"><a href="" title=""><u>Quarto</u></a><data>3</data></li>
+			<li data-id="decoracao-living"><a href="" title=""><u>Living</u></a><data>6</data></li>
+			<li data-id="decoracao-banheiro"><a href="" title=""><u>Banheiro</u></a><data>3</data></li>
+			<li data-id="decoracao-cozinha"><a href="" title=""><u>Cozinha</u></a><data>2</data></li>
+		</ul>
+
+		<ul class="submenu" data-parent="vestuario-masculino">
+			<li class="title">Masculino</li>
+			<li><a href="" title=""><u>Novos designs</u></a></li>
+			<li data-id="vestuario-masculino-camisetas"><a href="" title=""><u>Camisetas</u></a><data>3</data></li>
+			<li><a href="" title=""><u>Gola V</u></a></li>
+			<li><a href="" title=""><u>Manga longa</u></a></li>
+			<li><a href="" title=""><u>Costurados à mão</u></a></li>
+			<li><a href="" title=""><u>Casacos</u></a></li>
+			<li><a href="" title=""><u>Moletons</u></a></li>
+			<li><a href="" title=""><u>Jaquetas</u></a></li>
+			<li><a href="" title=""><u>Exclusivos</u></a></li>
+			<li><a href="" title=""><u>Sem manga</u></a></li>
+			<li><a href="" title=""><u>Shorts</u></a></li>
+			<li><a href="" title=""><u>Calçados</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="vestuario-feminino">
+			<li class="title">Feminino</li>
+			<li><a href="" title=""><u>Novos designs</u></a></li>
+			<li><a href="" title=""><u>Camisetas</u></a></li>
+			<li><a href="" title=""><u>Gola V</u></a></li>
+			<li><a href="" title=""><u>Manga longa</u></a></li>
+			<li><a href="" title=""><u>Costurados à mão</u></a></li>
+			<li><a href="" title=""><u>Casacos</u></a></li>
+			<li><a href="" title=""><u>Moletons</u></a></li>
+			<li><a href="" title=""><u>Jaquetas</u></a></li>
+			<li><a href="" title=""><u>Exclusivos</u></a></li>
+			<li><a href="" title=""><u>Sem manga</u></a></li>
+			<li><a href="" title=""><u>Saias</u></a></li>
+			<li><a href="" title=""><u>Calçados</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="vestuario-unissex">
+			<li class="title">Unissex</li>
+			<li><a href="" title=""><u>Novos designs</u></a></li>
+			<li><a href="" title=""><u>Camisetas</u></a></li>
+			<li><a href="" title=""><u>Confort colors</u></a></li>
+			<li><a href="" title=""><u>Manga longa</u></a></li>
+			<li><a href="" title=""><u>Costurados à mão</u></a></li>
+			<li><a href="" title=""><u>Casacos</u></a></li>
+			<li><a href="" title=""><u>Moletons</u></a></li>
+			<li><a href="" title=""><u>Jaquetas</u></a></li>
+			<li><a href="" title=""><u>Corta vento</u></a></li>
+			<li><a href="" title=""><u>Sem manga</u></a></li>
+			<li><a href="" title=""><u>Meias</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="vestuario-infantil-bebes">
+			<li class="title">Infantil & Bebês</li>
+			<li><a href="" title=""><u>Novos designs</u></a></li>
+			<li><a href="" title=""><u>Camisetas</u></a></li>
+			<li><a href="" title=""><u>Manga longa</u></a></li>
+			<li><a href="" title=""><u>Casacos</u></a></li>
+			<li><a href="" title=""><u>Bebê macacão</u></a></li>
+			<li><a href="" title=""><u>Bebê camisetas </u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="chapeus-silkados">
+			<li class="title">Silkados</li>
+			<li><a href="" title=""><u>Chapéus de caminhoneiro</u></a></li>
+			<li><a href="" title=""><u>Bonés de baseball</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="chapeus-bordados">
+			<li class="title">Bordados</li>
+			<li><a href="" title=""><u>Com botoeira</u></a></li>
+			<li><a href="" title=""><u>Gorros</u></a></li>
+			<li><a href="" title=""><u>Gorros com dobra</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="acessorios-bags">
+			<li class="title">bags</li>
+			<li><a href="" title=""><u>Com faixa</u></a></li>
+			<li><a href="" title=""><u>Com ziper</u></a></li>
+			<li><a href="" title=""><u>Com alças</u></a></li>
+			<li><a href="" title=""><u>Com corda</u></a></li>
+			<li><a href="" title=""><u>Bag de compra</u></a></li>
+			<li><a href="" title=""><u>Bag de viagem</u></a></li>
+			<li><a href="" title=""><u>Mochilas</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="acessorios-bebidas">
+			<li class="title">Bebidas</li>
+			<li><a href="" title=""><u>Canecas brancas</u></a></li>
+			<li><a href="" title=""><u>Canecas pretas</u></a></li>
+			<li><a href="" title=""><u>Canecas cone</u></a></li>
+			<li><a href="" title=""><u>Copo com tampa</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="acessorios-lifestyle">
+			<li class="title">Lifestyle</li>
+			<li><a href="" title=""><u>Bonés</u></a></li>
+			<li><a href="" title=""><u>Lenços</u></a></li>
+			<li><a href="" title=""><u>Adesivos</u></a></li>
+			<li><a href="" title=""><u>Bottons</u></a></li>
+			<li><a href="" title=""><u>Imãs</u></a></li>
+			<li><a href="" title=""><u>Quebra-cabeças</u></a></li>
+			<li><a href="" title=""><u>Capa de celular</u></a></li>
+			<li><a href="" title=""><u>Toalhas de praia</u></a></li>
+			<li><a href="" title=""><u>Skateboards</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="acessorios-escritorio">
+			<li class="title">Escritório</li>
+			<li><a href="" title=""><u>Mouse pad</u></a></li>
+			<li><a href="" title=""><u>Tapetes de mesa</u></a></li>
+			<li><a href="" title=""><u>Cartão de visita</u></a></li>
+			<li><a href="" title=""><u>Cadernos sem pauta</u></a></li>
+			<li><a href="" title=""><u>Cadernos com pauta</u></a></li>
+			<li><a href="" title=""><u>Cadernos espiralados</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="posteres-impressos">
+			<li class="title">Impressos</li>
+			<li><a href="" title=""><u>Pôster de arte</u></a></li>
+			<li><a href="" title=""><u>Emoldurados</u></a></li>
+			<li><a href="" title=""><u>Minis de arte</u></a></li>
+			<li><a href="" title=""><u>Minis emoldurados</u></a></li>
+			<li><a href="" title=""><u>Impressos em tela</u></a></li>
+			<li><a href="" title=""><u>Alumínio</u></a></li>
+			<li><a href="" title=""><u>Acrílico</u></a></li>
+			<li><a href="" title=""><u>Tapetes de parede</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="posteres-skateboards">
+			<li class="title">Skateboards</li>
+			<li><a href="" title=""><u>Shapes</u></a></li>
+			<li><a href="" title=""><u>Shapes com suporte</u></a></li>
+			<li><a href="" title=""><u>Básicos</u></a></li>
+			<li><a href="" title=""><u>Premium</u></a></li>
+			<li><a href="" title=""><u>Pro</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="posteres-temas">
+			<li class="title">Temas</li>
+			<li><a href="" title=""><u>Surreal</u></a></li>
+			<li><a href="" title=""><u>Landscape</u></a></li>
+			<li><a href="" title=""><u>Arte gráfica</u></a></li>
+			<li><a href="" title=""><u>Pintura</u></a></li>
+			<li><a href="" title=""><u>Fotografia</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="decoracao-quarto">
+			<li class="title">Quarto</li>
+			<li><a href="" title=""><u>Capas de edredom</u></a></li>
+			<li><a href="" title=""><u>Cobertores</u></a></li>
+			<li><a href="" title=""><u>Cestas</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="decoracao-living">
+			<li class="title">Living</li>
+			<li><a href="" title=""><u>Pinturas de parede</u></a></li>
+			<li><a href="" title=""><u>Tapetes de parede</u></a></li>
+			<li><a href="" title=""><u>Almofadas</u></a></li>
+			<li><a href="" title=""><u>Capas de sofá</u></a></li>
+			<li><a href="" title=""><u>Capas de poltrona</u></a></li>
+			<li><a href="" title=""><u>Tapetes premium</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="decoracao-banheiro">
+			<li class="title">Banheiro</li>
+			<li><a href="" title=""><u>Tapetes de piso</u></a></li>
+			<li><a href="" title=""><u>Cortinas de box</u></a></li>
+			<li><a href="" title=""><u>Toalhas</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="decoracao-cozinha">
+			<li class="title">Cozinha</li>
+			<li><a href="" title=""><u>Utensílios de bebida</u></a></li>
+			<li><a href="" title=""><u>Imãs</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="vestuario-masculino-camisetas">
+			<li class="title">Camisetas</li>
+			<li><a href="" title=""><u>Sub 1</u></a></li>
+			<li data-id="vestuario-masculino-camisetas-sub2"><a href="" title=""><u>Sub 2</u></a><data>3</data></li>
+			<li><a href="" title=""><u>Sub 3</u></a></li>
+		</ul>
+
+		<ul class="submenu" data-parent="vestuario-masculino-camisetas-sub2">
+			<li class="title">Sub 2</li>
+			<li><a href="" title=""><u>Sub 1</u></a></li>
+			<li><a href="" title=""><u>Sub 2</u></a></li>
+			<li><a href="" title=""><u>Sub 3</u></a></li>
+		</ul>
+
+	</nav>
+	<aside class="menu-banner">
+		<Banner
+			href="#"
+			showTitle={true}
+			title= "Camisetas com 15% off"
+			src="/template-ecommerce-vega/img/banners/banner-menu.jpg"
+			alt="Camisetas com 15% off"
+			contrast="light"
+			gradient="true"
+		/>
+	</aside>
+</div>

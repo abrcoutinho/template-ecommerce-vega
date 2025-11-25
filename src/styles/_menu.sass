@@ -1,7 +1,210 @@
+@use "variables" as *
+@use "base"
+@use "sass:color"
+
 .store-menu
+	max-width: $main_column
+	max-height: 24.25rem
+	box-sizing: border-box
+	padding: 0 2.5rem
+	border-radius: 0 0 .5rem .5rem
 	position: fixed
-	top: 0
-	right: 0
-	z-index: 5
+	top: 4.5rem
+	left: 50%
+	transform: translateX(calc($main_column / -2))
+	z-index: 11
+	background-color: var(--neutral_0)
+	// display: flex
 	display: none
+	gap: .75rem
+	transition: top .1s
+	box-shadow: 0 .25rem .25rem rgba(black, 20%)
+
+	&.active
+		display: flex
+
+	&.scrolled
+		top: 3.5rem
+		transition: top 1.5s $ease
+
+	&::before
+		content: ''
+		width: 100%
+		height: .3rem
+		background-color: $theme
+		position: absolute
+		top: 0
+		left: 0
+
+
+	nav
+		flex: 1
+		min-width: 0
+		display: flex
+		gap: .75rem
+		max-height: 80%
+		overflow-x: auto
+		white-space: nowrap
+
+	ul
+		flex: 0 0 14rem
+		padding: 2rem 0
+		overflow-y: auto
+		// &:not(:first-of-type)
+		// 	padding-top: 4.5rem
+
+	li
+		// width: 14rem
+		height: 2.5rem
+		box-sizing: border-box
+		padding-left: .75rem
+		font-size: 1.125rem
+		font-weight: 600
+		line-height: 2.5rem
+		border-bottom: solid 1px rgba(grey, 25%)
+		display: flex
+		align-items: center
+
+		&:last-child
+			border-bottom: none
+
+		&:hover u
+			opacity: 1
+			transition: opacity
+
+		u
+			text-decoration: none
+			flex: 1
+			min-width: 0
+			white-space: nowrap
+			overflow: hidden
+			text-overflow: ellipsis
+			opacity: .4
+			transition: opacity .3s $ease
+			cursor: default
+
+		a
+			color: var(--text-color)
+			flex: 1
+			display: flex
+			align-items: center
+			min-width: 0
+
+			&:hover
+				text-decoration: underline
+
+			u
+				cursor: pointer
+
+		&.home
+			padding: 0
+			border-bottom: none
+			a
+				flex: 0 0 3rem
+				height: 2.5rem
+				mask-image: url(/template-ecommerce-vega/img/icons/home.svg)
+				mask-size: 1.5rem 1.5rem
+				mask-repeat: no-repeat
+				mask-position: center
+				background-color: var(--text-color)
+
+		&.title
+			border-bottom: none
+			font-size: .8rem
+
+		data
+			width: 1.25rem
+			height: 2rem
+			font-size: 0.875rem
+			font-weight: 400
+			line-height: 2rem
+			text-align: center
+			padding: 0 1.25rem 0 .25rem
+			border-left: solid 1px rgba(grey, 25%)
+			position: relative
+			border-radius: 0 .5rem .5rem 0
+			cursor: default
+
+			&:hover
+				background-color: rgba(lightgrey, .3)
+
+			&::after
+				content: ''
+				width: 1rem
+				height: 1rem
+				mask-image: url(/template-ecommerce-vega/img/icons/play.svg)
+				mask-size: 1rem 1rem
+				mask-repeat: no-repeat
+				mask-position: center
+				background-color: var(--text-color)
+				position: absolute
+				top: 50%
+				right: .25rem
+				transform: translateY(-.5rem)
+				opacity: .2
+
+	.submenu
+		display: none
+		&.active
+			display: block
+
+	.active-item
+		u
+			opacity: 1
+		data::after
+			opacity: 1
+
+	.menu-banner
+		padding: 1.25rem
+		img
+			width: 16.25rem
+			height: 21.875rem
+			background-color: rgba(lightgrey, 30%)
+			border-radius: .25rem
+
+
+
+
+@include base.for-size(desk_sm)
+	.store-menu
+		width: 100vw
+		padding: 0 1rem
+		left: 0
+		transform: initial
+
+
+@include base.for-size(tablet_md)
+	.store-menu
+		top: initial !important
+		bottom: 0
+		max-height: initial
+		height: 50vh
+
+		nav
+			max-height: initial
+		ul
+			flex: 0 0 70vw
+
+		li
+			height: 3.5rem
+			font-size: 2rem
+
+			data
+				width: 8vw
+				height: 3rem
+				font-size: 1.5rem
+				line-height: 3rem
+
+		.menu-banner
+			display: none
+
+
+@include base.for-size(phone)
+	.store-menu
+		li
+			font-size: 5vw
+			&.title
+				font-size: 3vw
+			data
+				font-size: 4vw
 
