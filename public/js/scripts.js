@@ -158,83 +158,6 @@ menuContainer.addEventListener('mouseleave', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// function getChain(id) {
-//     const chain = [id];
-//     let currentId = id;
-
-//     while (true) {
-//         // Encontra o <li> com o id atual
-//         const li = menuContainer.querySelector(`li[data-id="${currentId}"]`);
-//         if (!li) break;
-
-//         // O pai UL só existe se este li estiver dentro de um submenu
-//         const submenuUl = li.closest('.submenu');
-//         if (!submenuUl || !submenuUl.dataset.parent) break;
-
-//         // O parent do submenu atual é o próximo na cadeia
-//         currentId = submenuUl.dataset.parent;
-//         chain.push(currentId);
-//     }
-//     return chain;
-// }
-
-// menuContainer.addEventListener('mouseenter', function (e) {
-//     const item = e.target.closest('li[data-id]');
-//     if (!item) return;
-
-//     const id = item.dataset.id;
-
-//     // Obter a cadeia completa de ancestrais
-//     const chain = getChain(id);
-
-//     // --- SUBMENUS ---
-//     menuContainer.querySelectorAll('.submenu').forEach(ul => {
-//         const parent = ul.dataset.parent;
-//         if (!chain.includes(parent)) {
-//             ul.classList.remove('active');
-//         }
-//     });
-
-//     chain.forEach(chainId => {
-//         const submenus = menuContainer.querySelectorAll(`.submenu[data-parent="${chainId}"]`);
-//         submenus.forEach(ul => ul.classList.add('active'));
-//     });
-
-//     // --- ACTIVE-ITEM ---
-
-//     // Remove dos que não devem estar destacados
-//     menuContainer.querySelectorAll('li[data-id]').forEach(li => {
-//         li.classList.remove('active-item');
-//     });
-
-//     // Adiciona active-item ao item apontado + ancestrais
-//     chain.forEach(chainId => {
-//         const li = menuContainer.querySelector(`li[data-id="${chainId}"]`);
-//         if (li) li.classList.add('active-item');
-//     });
-
-// }, true);
-
-// // Fechar tudo quando sai do menuContainer
-// menuContainer.addEventListener('mouseleave', () => {
-//     menuContainer.querySelectorAll('.submenu').forEach(ul => ul.classList.remove('active'));
-//     menuContainer.querySelectorAll('li[data-id]').forEach(li => li.classList.remove('active-item'));
-// });
-
-
-
 // nav menu dragabble
 const menuNav = document.querySelector('.store-menu nav');
 
@@ -267,7 +190,44 @@ menuNav.addEventListener('mousemove', (e) => {
 
 
 
+// product details: gallery expand toggle
+document.getElementById("gallery-bt").addEventListener("click", function () {
+	const gallery = document.getElementById("img-gallery");
+	gallery.classList.toggle("expanded");
+});
+
+// product details: accordions
+document.querySelectorAll(".product-details .accordion-title").forEach(accordionTitle => {
+	accordionTitle.addEventListener("click", () => {
+		const content = accordionTitle.nextElementSibling;
+		accordionTitle.classList.toggle("active");
+		content.classList.toggle("expanded");
+	});
+});
 
 
 
+// Catalog dropdown filters
+const catalogFiltersBt = document.getElementById('filters-bt');
+const catalogDropFilters = document.querySelector('.dropdown-filters');
 
+catalogFiltersBt.addEventListener('click', () => {
+	catalogDropFilters.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+	const isClickInside = catalogDropFilters.contains(e.target) || catalogFiltersBt.contains(e.target);
+
+	if (!isClickInside) {
+		catalogDropFilters.classList.remove('active');
+	}
+});
+
+// Catalog filters accordions
+document.querySelectorAll('.dropdown-filters dl').forEach(dl => {
+	const dt = dl.querySelector('dt');
+
+	dt.addEventListener('click', () => {
+		dl.classList.toggle('active');
+	});
+});

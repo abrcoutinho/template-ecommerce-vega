@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Banner from '../../../components/Banner.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import Placard from '../../../components/Placard.astro';
+---
+
+<BaseLayout title="Trhift Store - Manga longa masculinas" description="Camisetas e estampas pra te deixar no estilo! Crie sua loja online com o Vega Checkout.">
+
+	<Placard
+		phrase1="10% off com o cupom <b>BOASVINDAS</b> para sua primeira compra"
+	/>
+
+	<!-- Catálogo de produtos -->
+	<section class="catalog">
+		<header>
+			<ol class="breadcrumb">
+				<li class="home"><a href={`${import.meta.env.BASE_URL}`} title="Início"></a></li>
+				<li><a href="#" title="Vestuário">Vestuário</a><i></i></li>
+				<li><a href="#" title="Masculino">Masculino</a><i></i></li>
+				<li><em>Manga longa</em></li>
+			</ol>
+
+			<h2>Manga longa</h2>
+
+			<div class="filters-wrapper">
+				<button class="filters-bt" id="filters-bt" title="Filtros">Filtros<i></i></button>
+				<ul class="filter-chips">
+					<li>Preto<button title="Remover"></button></li>
+					<li>M<button title="Remover"></button></li>
+					<li>Promoção<button title="Remover"></button></li>
+					<li>Gatification<button title="Remover"></button></li>
+					<li>Até R$60<button title="Remover"></button></li>
+				</ul>
+				<button class="arrange-bt" title="Ordenar"><span></span>Popular<i></i></button>
+			</div>
+
+			<form class="dropdown-filters">
+				<header>
+					<em>Filtros</em>
+					<button class="clean-bt" title="Limpar">Limpar</button>
+				</header>
+				<fieldset>
+					<dl class="active filtered">
+						<dt><b>Cor</b><i></i></dt>
+						<dd>
+							<label for="cor-preto">Preto</label>
+							<input type="checkbox" name="" id="cor-preto">
+						</dd>
+						<dd>
+							<label for="cor-branco">Branco</label>
+							<input type="checkbox" name="" id="cor-branco">
+						</dd>
+						<dd>
+							<label for="cor-cinza">Cinza</label>
+							<input type="checkbox" name="" id="cor-cinza">
+						</dd>
+					</dl>
+					<dl>
+						<dt><b>Marca</b><i></i></dt>
+						<dd>
+							<label for="marca-1">Marca 1</label>
+							<input type="checkbox" name="" id="marca-1">
+						</dd>
+						<dd>
+							<label for="marca-2">Marca 2</label>
+							<input type="checkbox" name="" id="marca-2">
+						</dd>
+						<dd>
+							<label for="marca-3">Marca 3</label>
+							<input type="checkbox" name="" id="marca-3">
+						</dd>
+					</dl>
+					<dl class="filtered">
+						<dt><b>Tamanho</b><i></i></dt>
+						<dd>
+							<label for="tamanho-p">P</label>
+							<input type="checkbox" name="" id="tamanho-p">
+						</dd>
+						<dd>
+							<label for="tamanho-m">M</label>
+							<input type="checkbox" name="" id="tamanho-m">
+						</dd>
+						<dd>
+							<label for="tamanho-g">G</label>
+							<input type="checkbox" name="" id="tamanho-g">
+						</dd>
+						<dd>
+							<label for="tamanho-gg">GG</label>
+							<input type="checkbox" name="" id="tamanho-gg">
+						</dd>
+					</dl>
+					<dl>
+						<dt><b>Preço</b><i></i></dt>
+						<dd><!--range dragger--></dd>
+					</dl>
+					<dl>
+						<dt><b>Tags</b><i></i></dt>
+						<dd>
+							<label for="tags-promocao">Promoção</label>
+							<input type="checkbox" name="" id="tags-promocao">
+						</dd>
+						<dd>
+							<label for="tag-novidade">Novidade</label>
+							<input type="checkbox" name="" id="tag-novidade">
+						</dd>
+						<dd>
+							<label for="tag-gatification">Gatification</label>
+							<input type="checkbox" name="" id="tag-gatification">
+						</dd>
+						<dd>
+							<label for="tag-temas-orientais">Temas orientais</label>
+							<input type="checkbox" name="" id="tag-temas-orientais">
+						</dd>
+					</dl>
+				</fieldset>
+				<footer>
+					<input type="submit" title="Aplicar filtros" value="Aplicar" />
+				</footer>
+			</form>
+		</header>
+
+		<div class="cards-container">
+			<ProductCard
+				title="Catana"
+				src="/template-ecommerce-vega/img/products/catana.jpg"
+				price="179,80"
+				installmentsNumber="10"
+				installmentsValue="17,98"
+			/>
+			<ProductCard
+				title="Ghost of Disapproval"
+				src="/template-ecommerce-vega/img/products/ghost.jpg"
+				price="179,80"
+				installmentsNumber="10"
+				installmentsValue="17,98"
+			/>
+			<ProductCard
+				title="The Beauty Of Imperfection"
+				src="/template-ecommerce-vega/img/products/imperfection.jpg"
+				price="179,80"
+				installmentsNumber="10"
+				installmentsValue="17,98"
+			/>
+			<ProductCard
+				title="The Black Sushi Dragon"
+				src="/template-ecommerce-vega/img/products/sushi.jpg"
+				price="179,80"
+				installmentsNumber="10"
+				installmentsValue="17,98"
+			/>
+
+			<ProductCard
+				title="Catana"
+				src="/template-ecommerce-vega/img/products/catana.jpg"
+				price="179,80"
+				installmentsNumber="10"
+				installmentsValue="17,98"
+			/>
+			<ProductCard
+				title="Ghost of Disapproval"
+				src="/template-ecommerce-vega/img/products/ghost.jpg"
+				price="179,80"
+				installmentsNumber="10"
+				installmentsValue="17,98"
+			/>
+			<ProductCard
+				title="The Beauty Of Imperfection"
+				src="/template-ecommerce-vega/img/products/imperfection.jpg"
+				price="179,80"
+				installmentsNumber="10"
+				installmentsValue="17,98"
+			/>
+			<ProductCard
+				title="The Black Sushi Dragon"
+				src="/template-ecommerce-vega/img/products/sushi.jpg"
+				price="179,80"
+				installmentsNumber="10"
+				installmentsValue="17,98"
+			/>
+			<ProductCard
+				title="Catana"
+				src="/template-ecommerce-vega/img/products/catana.jpg"
+				price="179,80"
+				installmentsNumber="10"
+				installmentsValue="17,98"
+			/>
+			<ProductCard
+				title="Ghost of Disapproval"
+				src="/template-ecommerce-vega/img/products/ghost.jpg"
+				price="179,80"
+				installmentsNumber="10"
+				installmentsValue="17,98"
+			/>
+		</div>
+	</section>
+</BaseLayout>

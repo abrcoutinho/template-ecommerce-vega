@@ -7,7 +7,7 @@ const { menuBanner } = Astro.props;
 <div class="store-menu">
 	<nav>
 		<ul>
-			<li class="home"><a href={Astro.site} title="Início"></a></li>
+			<li class="home"><a href={`${import.meta.env.BASE_URL}`} title="Início"></a></li>
 			<li data-id="temas"><u>Temas</u><data>9</data></li>
 			<li data-id="vestuario"><a href="" title=""><u>Vestuário</u></a><data>4</data></li>
 			<li data-id="chapeus"><a href="" title=""><u>Chapéus</u></a><data>2</data></li>
@@ -71,7 +71,7 @@ const { menuBanner } = Astro.props;
 			<li><a href="" title=""><u>Novos designs</u></a></li>
 			<li data-id="vestuario-masculino-camisetas"><a href="" title=""><u>Camisetas</u></a><data>3</data></li>
 			<li><a href="" title=""><u>Gola V</u></a></li>
-			<li><a href="" title=""><u>Manga longa</u></a></li>
+			<li><a href={`${import.meta.env.BASE_URL}/vestuario/masculino/manga-longa`} title=""><u>Manga longa</u></a></li>
 			<li><a href="" title=""><u>Costurados à mão</u></a></li>
 			<li><a href="" title=""><u>Casacos</u></a></li>
 			<li><a href="" title=""><u>Moletons</u></a></li>
@@ -246,7 +246,7 @@ const { menuBanner } = Astro.props;
 		</ul>
 
 		<ul class="submenu" data-parent="vestuario-masculino-camisetas-sub2">
-			<li class="title"><small>Sub</small> 2</li>
+			<li class="title"><small>Sub 2</small></li>
 			<li><a href="" title=""><u>Sub 1</u></a></li>
 			<li><a href="" title=""><u>Sub 2</u></a></li>
 			<li><a href="" title=""><u>Sub 3</u></a></li>
