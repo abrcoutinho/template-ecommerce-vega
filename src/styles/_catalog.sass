@@ -278,3 +278,128 @@
 				&:hover
 					opacity: .7
 
+
+
+	.dropdown-arrange
+		width: 10rem
+		background-color: var(--neutral_0)
+		padding: .75rem 1.75rem 1.25rem
+		border-radius: 0 0 .5rem .5rem
+		border-top: solid .25rem $theme
+		position: absolute
+		top: 10.2rem
+		right: 0
+		box-shadow: $shadow_md
+		display: none
+
+		&.active
+			display: block
+
+		strong
+			height: 2.5rem
+			display: flex
+			align-items: center
+			text-transform: uppercase
+			font-size: .75rem
+			font-weight: 700
+
+		button
+			width: 100%
+			text-align: left
+			display: block
+			cursor: pointer
+			line-height: 2.5rem
+			min-width: 0
+			overflow: hidden
+			white-space: nowrap
+			text-overflow: ellipsis
+			padding: 0
+			&:hover
+				opacity: .7
+
+
+
+@include base.for-size(tablet_lg)
+	.catalog
+		.cards-container
+			justify-content: center
+		.product-card
+			flex: 0 1 calc((100% - 1.5rem) / 3)
+
+
+@include base.for-size(tablet_md)
+	.catalog
+		.product-card
+			flex: 0 1 calc((100% - .75rem) / 2)
+
+
+@include base.for-size(phone)
+	.catalog
+		.breadcrumb
+			overflow-x: auto
+			white-space: nowrap
+
+		h2
+			font-size: 7vw
+			line-height: 8vw
+			white-space: initial
+
+		.filters-wrapper
+			margin-top: 1.25rem
+			flex-wrap: wrap
+			gap: 1.25rem
+
+			.filters-bt
+				order: 1
+			.arrange-bt
+				order: 2
+			.filter-chips
+				order: 3
+				flex: 0 0 100%
+				gap: .25rem
+
+		.dropdown-filters
+			width: 90%
+			box-sizing: border-box
+			top: 8.4rem
+			left: 50%
+			transform: translateX(-50%)
+
+		.dropdown-arrange
+			width: 90%
+			box-sizing: border-box
+			top: 8.4rem
+			right: 50%
+			transform: translateX(50%)
+
+
+		.cards-container
+			justify-content: flex-start
+		.product-card
+			height: 26rem
+			min-width: initial
+			max-width: initial
+
+			.infos
+				flex: 0 0 12rem
+				padding: 1.25rem .75rem .75rem
+				
+				.tags
+					margin-bottom: .2rem
+					& > small:last-of-type
+						display: none
+				.delivery-tag
+					left: .75rem
+				h3
+					font-size: 1.2rem
+					line-height: 1.5rem
+				.price
+					span
+						display: none
+					strong
+						font-size: 5.5vw
+				footer
+					button
+						height: 2rem
+					.add-to-cart
+						display: none

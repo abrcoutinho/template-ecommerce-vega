@@ -32,7 +32,7 @@ import Placard from '../../../components/Placard.astro';
 					<li>Gatification<button title="Remover"></button></li>
 					<li>Até R$60<button title="Remover"></button></li>
 				</ul>
-				<button class="arrange-bt" title="Ordenar"><span></span>Popular<i></i></button>
+				<button class="arrange-bt" id="arrange-bt" title="Ordenar"><span></span>Popular<i></i></button>
 			</div>
 
 			<form class="dropdown-filters">
@@ -118,6 +118,15 @@ import Placard from '../../../components/Placard.astro';
 					<input type="submit" title="Aplicar filtros" value="Aplicar" />
 				</footer>
 			</form>
+
+			<div class="dropdown-arrange">
+				<strong>Ordenar por</strong>
+				<button title="Popular">Popular</button>
+				<button title="A-Z">A-Z</button>
+				<button title="Z-A">Z-A</button>
+				<button title="Menor preço">Menor preço</button>
+				<button title="Maior preço">Maior preço</button>
+			</div>
 		</header>
 
 		<div class="cards-container">

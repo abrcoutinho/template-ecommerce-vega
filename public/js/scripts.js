@@ -231,3 +231,19 @@ document.querySelectorAll('.dropdown-filters dl').forEach(dl => {
 		dl.classList.toggle('active');
 	});
 });
+
+// Catalog dropdown arrange
+const catalogArrangeBt = document.getElementById('arrange-bt');
+const catalogDropArrange = document.querySelector('.dropdown-arrange');
+
+catalogArrangeBt.addEventListener('click', () => {
+	catalogDropArrange.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+	const isClickInside = catalogDropArrange.contains(e.target) || catalogArrangeBt.contains(e.target);
+
+	if (!isClickInside) {
+		catalogDropArrange.classList.remove('active');
+	}
+});
